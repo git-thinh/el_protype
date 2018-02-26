@@ -1,0 +1,18 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta charset="utf-8" />
+</head>
+<body>
+    <script>
+        function go() {
+            
+            alert(document.body.innerText);  var m_url = 'http://localhost/bot.ashx?url=' + location.href.toString().split('/').join('|').split(':').join('~'); var bot = new XMLHttpRequest(); bot.open('GET', m_url, false); bot.send(null); if (bot.status === 200) { var val = bot.responseText; alert(val); }
+        }
+    </script>
+    <a href="javascript:(function(){ /**/  var m_url = 'http://localhost/bot.ashx?title='+ document.title +'&url=' + location.href.toString().split('/').join('|').split(':').join('~'); var bot = new XMLHttpRequest(); bot.open('POST', m_url, false); bot.send(document.body.innerText); if (bot.status === 200) { document.body.style = 'background-color: yellow !important;'; }  /**/ })();">UPDATE</a>
+    <hr />
+    <button onclick="go()">GO</button>
+</body>
+</html>

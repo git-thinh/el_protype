@@ -1,0 +1,80 @@
+﻿[
+  {
+    "text": "Phật học",
+    "icon": "/lib/icons/lotus.png",
+    "children": [
+      {
+        "text": "Kinh Phật",
+        "icon": "fa fa-folder-open-o"
+      },
+      {
+        "text": "Câu chuyện",
+        "icon": "fa fa-folder-open-o"
+      },
+      {
+        "text": "Sự kiện",
+        "icon": "fa fa-folder-open-o"
+      },
+      {
+        "text": "Kinh dịch",
+        "icon": "fa fa-folder-open-o"
+      }
+    ]
+  },
+  {
+    "text": "Tiếng Anh",
+    "icon": "/lib/icons/en.png",
+    "data": {
+      "type": "category",
+      "key": "",
+      "folder": "English"
+    },
+    "state": {
+      "opened": true
+    },
+    "children": [
+      {
+        "text": "Listen - Nghe",
+        "icon": "fa fa-folder-open-o",
+        "data": {
+          "type": "category",
+          "key": "",
+          "folder": "Listen - Nghe"
+        },
+        "state": {
+          "selected": false
+        },
+        "children": [ "Another node" ]
+      },
+      {
+        "text": "Grammar - Ngữ pháp",
+        "icon": "fa fa-folder-open-o",
+        "data": {
+          "type": "category",
+          "key": "",
+          "folder": "Grammar - Ngữ pháp"
+        },
+        "children": [ "Another node" ]
+      },
+      {
+        "text": "Phrase popular - Cụm từ phổ biến",
+        "icon": "fa fa-book",
+        "data": {
+          "type": "category",
+          "key": "",
+          "folder": "Phrase popular - Cụm từ phổ biến"
+        }
+      },
+      {
+        "text": "Exercise - Bài tập",
+        "icon": "fa fa-folder-open-o",
+        "data": {
+          "type": "category",
+          "key": "",
+          "folder": "Grammar - Ngữ pháp"
+        },
+        "children": [ "Another node" ]
+      }
+    ]
+  }
+]

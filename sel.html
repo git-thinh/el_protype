@@ -1,0 +1,41 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+	<meta charset="utf-8" /> 
+    <meta name="viewport" content="width=device-width,user-scalable=no">
+</head>
+<body>
+    <p>Vestibulum vel orci hendrerit ligula pharetra volutpat et sed dui. Phasellus vitae feugiat dolor. Mauris eleifend neque ac iaculis aliquet. Nunc malesuada nisi in dictum tristique. Vestibulum mauris eros, varius sed faucibus sed, pellentesque et nunc. Curabitur ultricies blandit urna. Pellentesque ut augue mollis, lacinia dui non, rutrum justo. Nunc et odio dapibus, blandit leo eget, aliquet urna. Etiam lorem dolor, vehicula a purus in, fermentum congue diam. Integer vel urna nec turpis posuere tempor eu lacinia purus. Praesent mattis viverra lacus bibendum fringilla. Nulla commodo posuere ante, at cursus est rhoncus quis. In iaculis viverra neque in blandit. Pellentesque eleifend arcu diam, sed sodales ligula pharetra at. Morbi ac nisl adipiscing sem interdum convallis. </p>
+    <p>Vestibulum vel orci hendrerit ligula pharetra volutpat et sed dui. Phasellus vitae feugiat dolor. Mauris eleifend neque ac iaculis aliquet. Nunc malesuada nisi in dictum tristique. Vestibulum mauris eros, varius sed faucibus sed, pellentesque et nunc. Curabitur ultricies blandit urna. Pellentesque ut augue mollis, lacinia dui non, rutrum justo. Nunc et odio dapibus, blandit leo eget, aliquet urna. Etiam lorem dolor, vehicula a purus in, fermentum congue diam. Integer vel urna nec turpis posuere tempor eu lacinia purus. Praesent mattis viverra lacus bibendum fringilla. Nulla commodo posuere ante, at cursus est rhoncus quis. In iaculis viverra neque in blandit. Pellentesque eleifend arcu diam, sed sodales ligula pharetra at. Morbi ac nisl adipiscing sem interdum convallis. </p>
+    <p>Vestibulum vel orci hendrerit ligula pharetra volutpat et sed dui. Phasellus vitae feugiat dolor. Mauris eleifend neque ac iaculis aliquet. Nunc malesuada nisi in dictum tristique. Vestibulum mauris eros, varius sed faucibus sed, pellentesque et nunc. Curabitur ultricies blandit urna. Pellentesque ut augue mollis, lacinia dui non, rutrum justo. Nunc et odio dapibus, blandit leo eget, aliquet urna. Etiam lorem dolor, vehicula a purus in, fermentum congue diam. Integer vel urna nec turpis posuere tempor eu lacinia purus. Praesent mattis viverra lacus bibendum fringilla. Nulla commodo posuere ante, at cursus est rhoncus quis. In iaculis viverra neque in blandit. Pellentesque eleifend arcu diam, sed sodales ligula pharetra at. Morbi ac nisl adipiscing sem interdum convallis. </p>
+
+    <ul id="menu" style="display:none;position:fixed;z-index:999;top:0px;background-color: orange;width: 300px;">
+        <li id="b1">1</li>
+        <li>2</li>
+        <li id="text"></li>
+    </ul>
+    <script>
+        function getSelText() {
+            var txt = '';
+            if (window.getSelection) {
+                txt = window.getSelection();
+            }
+            else if (document.getSelection) {
+                txt = document.getSelection();
+            }
+            else if (document.selection) {
+                txt = document.selection.createRange().text;
+            }
+
+            return txt;
+        }
+
+        document.addEventListener("selectionchange", function () {
+            console.log('Selection changed.');
+            document.getElementById('menu').style.display = 'block';
+            document.getElementById('text').innerText = getSelText();
+        });
+    </script>
+</body>
+</html>

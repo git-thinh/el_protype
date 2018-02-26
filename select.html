@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width,user-scalable=no">
+
+    <script type="text/javascript" src="//code.jquery.com/jquery-2.0.2.js"></script>
+
+    <style type="text/css">
+        body {
+            padding: 60px 10px;
+        }
+
+        ul.tools {
+            display: none;
+            list-style: none;
+            box-shadow: 0px 0px 4px rgba(0,0,0,.5);
+            border: solid 1px #000;
+            position: absolute;
+            background: #fff;
+        }
+
+            ul.tools li {
+                display: inline-block;
+                width: 10px;
+                height: 20px;
+                border: solid 1px #000;
+                margin: 5px;
+                padding: 5px 10px;
+                cursor: pointer;
+            }
+    </style>
+
+    <title></title>
+
+    <script type='text/javascript'>
+        $(window).load(function () {
+            sessionStorage['select'] = '';
+
+            if (!window.x) {
+                x = {};
+            }
+
+            x.Selector = {};
+            x.Selector.getSelected = function () {
+                var t = '';
+                if (window.getSelection) {
+                    t = window.getSelection();
+                } else if (document.getSelection) {
+                    t = document.getSelection();
+                } else if (document.selection) {
+                    t = document.selection.createRange().text;
+                }
+                return t;
+            }
+
+            var pageX;
+            var pageY;
+
+            document.getElementById('b1').addEventListener('click', function () {
+                var selectedText = sessionStorage['select'];
+                alert(selectedText);
+            });
+
+            $(document).ready(function () {
+
+                $(document).bind("mouseup", function () {
+                    var selectedText = x.Selector.getSelected();
+                    if (selectedText != '') {
+                        sessionStorage['select'] = selectedText;
+                        $('ul.tools').css({
+                            'left': pageX + 5,
+                            'top': pageY - 55
+                        }).fadeIn(200);
+                    } else {
+                        $('ul.tools').fadeOut(200);
+                    }
+                });
+
+                $(document).on("mousedown", function (e) {
+                    pageX = e.pageX;
+                    pageY = e.pageY;
+                });
+
+            });
+        });
+
+
+
+    </script>
+
+
+</head>
+
+<body>
+    <p>Vestibulum vel orci hendrerit ligula pharetra volutpat et sed dui. Phasellus vitae feugiat dolor. Mauris eleifend neque ac iaculis aliquet. Nunc malesuada nisi in dictum tristique. Vestibulum mauris eros, varius sed faucibus sed, pellentesque et nunc. Curabitur ultricies blandit urna. Pellentesque ut augue mollis, lacinia dui non, rutrum justo. Nunc et odio dapibus, blandit leo eget, aliquet urna. Etiam lorem dolor, vehicula a purus in, fermentum congue diam. Integer vel urna nec turpis posuere tempor eu lacinia purus. Praesent mattis viverra lacus bibendum fringilla. Nulla commodo posuere ante, at cursus est rhoncus quis. In iaculis viverra neque in blandit. Pellentesque eleifend arcu diam, sed sodales ligula pharetra at. Morbi ac nisl adipiscing sem interdum convallis. </p>
+
+    <ul class="tools">
+        <li id="b1">1</li>
+        <li>2</li>
+        <li>3</li>
+    </ul>
+
+
+</body>
+
+</html>
+
